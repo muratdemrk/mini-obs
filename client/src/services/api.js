@@ -2,6 +2,7 @@ const API_BASE_URL = "http://localhost:5000";
 
 export async function apiRequest(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}${path}`, {
+    method: options.method || "GET",
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
